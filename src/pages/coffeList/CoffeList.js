@@ -1,11 +1,14 @@
 import { useEffect } from 'react';
 import './CoffeList.css';
-import { getData } from '../../services/getData';
 import { useState } from 'react';
+
+import { getData } from '../../services/getData';
+
+import { CoffeDetailCard } from '../../components/CoffeDetailCard/CoffeDetailCard';
 
 const CoffeListPage = () => {
   const [data, setData] = useState([]);
-  
+
   useEffect(() => {
     // using a callback to get data from the API
     // and set it to the state
