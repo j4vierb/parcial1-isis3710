@@ -1,0 +1,6 @@
+.coffe-list-page {
+  padding: 0 3rem;
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  column-gap: 2rem;
+}
