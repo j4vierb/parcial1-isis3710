@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import './CoffeList.css';
 import { useState } from 'react';
 
-import { getData } from '../../services/getData';
+import { getCoffees } from '../../services/getData';
 
 import { CoffeDetailCard } from '../../components/CoffeDetailCard/CoffeDetailCard';
 
@@ -12,7 +12,7 @@ const CoffeListPage = () => {
   useEffect(() => {
     // using a callback to get data from the API
     // and set it to the state
-    getData((coffeData) => {
+    getCoffees((coffeData) => {
       setData(coffeData);
       console.log(coffeData);
     });
