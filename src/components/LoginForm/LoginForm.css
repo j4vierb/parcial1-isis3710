@@ -1,0 +1,67 @@
+.login-form {
+  max-width: 30rem;
+  padding: 1.5rem 4rem 4rem 4rem;
+  background-color: #faf2f2;
+  border: 1px solid #000;
+  border-radius: 2px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+  min-width: 35rem;
+  position: relative;
+}
+
+.login-form form {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+  row-gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+  row-gap: 0.25rem;
+  width: 100%;
+}
+
+.form-group label {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.form-group input {
+  height: 58px;
+  padding: 0.25rem 1.25rem;
+  border: 1px solid #000;
+  background-color: #d9d9d9;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 1rem;
+  margin-top: 0.3rem;
+  width: 100%;
+}
+
+.button-group button {
+  padding: 10px 4rem;
+  font-weight: 700;
+  font-size: 18px;
+  background-color: #E75D5D;
+}
+
+.button-group button:first-child {
+  background-color: #8FA98F;
+}
+
+.error-message {
+  color: #CD3232;
+  font-size: 18px;
+  font-weight: 700;
+  position: absolute;
+  bottom: 5px;
+}

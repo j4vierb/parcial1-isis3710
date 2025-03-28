@@ -1,18 +1,18 @@
+import { Header } from "../components/Header/Header";
+
 const MainLayout = ({ children }) => {
   return (
-    <>
-      <header style={{minHeight: '10vh'}}>
-        <h1>El aroma mágico</h1>
-      </header>
+    <div style={{ position: 'relative', height: '100vh' }}>
+      <Header />
 
-      <main style={{minHeight: '80vh'}}>
+      <main>
         { children }
       </main>
 
-      <footer className="d-flex justify-content-center align-items-center" style={{minHeight: '10vh'}}>
-        <p className="text-center">Contact us: +57 3102105253 - info@elaromamagico.com - @elaromamagico</p>
+      <footer className="d-flex justify-content-center align-items-center" style={{ position: 'absolute', bottom: '0', width: '100%' }}>
+        <p className="text-center" style={{fontWeight: 600, fontSize: '18px'}}>Contact us: +57 3102105253 - info@elaromamagico.com - @elaromamagico</p>
       </footer>
-    </>
+    </div>
   )
 }
 

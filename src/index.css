@@ -4,3 +4,14 @@ body {
   box-sizing: border-box;
   min-height: 100vh;
 }
+
+@font-face {
+  font-family: 'indie-flower';
+  src: url('./assets/fonts/IndieFlower.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.indie-flower {
+  font-family: 'indie-flower', sans-serif;
+}

@@ -1,0 +1,24 @@
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 3rem;
+}
+
+.header-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 80rem;
+}
+
+.header-title {
+  font-weight: 800;
+  text-shadow: 1px 4px 5px #000;
+}
+
+.caffe-banner {
+  max-width: 80rem;
+  margin: 0 auto;
+}
