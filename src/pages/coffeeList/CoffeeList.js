@@ -1,20 +1,20 @@
 import { useEffect } from 'react';
-import './CoffeList.css';
+import './CoffeeList.css';
 import { useState } from 'react';
 
 import { getCoffees } from '../../services/getData';
 
-import { CoffeDetailCard } from '../../components/CoffeDetailCard/CoffeDetailCard';
+import { CoffeeDetailCard } from '../../components/CoffeDetailCard/CoffeeDetailCard';
 
-const CoffeListPage = () => {
+const CoffeeListPage = () => {
   const [data, setData] = useState([]);
+  const [selectedCoffee, setSelectedCoffee] = useState(null);
 
   useEffect(() => {
     // using a callback to get data from the API
     // and set it to the state
     getCoffees((coffeData) => {
       setData(coffeData);
-      console.log(coffeData);
     });
   }, []);
 
@@ -31,32 +31,24 @@ const CoffeListPage = () => {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>1</td>
-              <td>Espresso</td>
-              <td>Medium</td>
-              <td>$2.50</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Latte</td>
-              <td>Light</td>
-              <td>$3.00</td>
-            </tr>
+            {data.map((coffe, i) => {
+              return (
+                <tr key={i} style={{ cursor: 'pointer' }} onClick={(e) => { setSelectedCoffee(coffe) }}>
+                  <td>{coffe.id}</td>
+                  <td>{coffe.nombre}</td>
+                  <td>{coffe.tipo}</td>
+                  <td>{coffe.region}</td>
+                </tr>
+              )
+            })}
           </tbody>
         </table>
       </div>
       <div className="detail-container">
-        <div className="detail-card">
-          <h2>Coffee Details</h2>
-          <p><strong>Name:</strong> Espresso</p>
-          <p><strong>Roast:</strong> Medium</p>
-          <p><strong>Price:</strong> $2.50</p>
-          <p><strong>Stock:</strong> In Stock</p>
-        </div>
+        { selectedCoffee && <CoffeeDetailCard coffee={selectedCoffee} /> }
       </div>
     </div>
   );
 }
 
-export { CoffeListPage };
+export { CoffeeListPage };

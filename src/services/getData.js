@@ -22,8 +22,15 @@ function login(username, password, callback) {
   }).then(res => res.json())
     .then(data => {
       callback(data);
-      console.log(data);
     });
 }
 
-export { getCoffees, login };
+function getCoffeeById(id, callback) {
+  fetch(API_URL + '/cafes/' + id)
+    .then(res => res.json())
+    .then(data => {
+      callback(data);
+    });
+}
+
+export { getCoffees, login, getCoffeeById };

@@ -14,12 +14,10 @@ const LoginForm = () => {
 
     login(formData.username, formData.password, (data) => {
       if (data.status === 'success') {
-        navigate('/coffeshop', { replace: true });
+        navigate('/coffeeshop', { replace: true });
       } else {
         setError(true);
         setFormData({ 'username': '', 'password': '' });
-        console.log('Error de autenticación');
-        console.log(formData);
         return;
       }
     });

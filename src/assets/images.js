@@ -1,3 +1,4 @@
 export const images = {
-  'banner': require('./images/coffe-banner.png'),
+  'banner': require('./images/coffee-banner.png'),
+  'coffee': require('./images/coffee.png'),
 };
