@@ -1,15 +1,23 @@
 import { useState } from 'react';
 import './LoginForm.css';
+import { useNavigate } from 'react-router-dom';
 
 const LoginForm = () => {
   const [error, setError] = useState(false);
   const [formData, setFormData] = useState({'username': '', 'password': ''});
+  let navigate = useNavigate();
 
   function handleSubmit(event) {
     event.preventDefault();
 
-    if(formData.username.length < 3 || formData.password.length < 3) {
+    if(formData.username === 'admin' && formData.password === 'admin') {
+      console.log(formData);
+      navigate('/coffeshop', { replace: true });
+    } else {
       setError(true);
+      setFormData({'username': '', 'password': ''});
+      console.log('Error de autenticación');
+      console.log(formData);
       return;
     }
   }
